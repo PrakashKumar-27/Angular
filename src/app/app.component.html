@@ -1,0 +1,46 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}!
+  </h1>
+</div>
+<div class="container">
+  <div class="col-md-12">
+    <h1>Company List</h1>
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">Sl.No</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Address</th>
+          <th class="text-center">Contact</th>
+          <th class="text-center">Email</th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of companies">
+          <td>{{ company.id }}</td>
+          <td>{{ company.name }}</td>
+          <td>{{ company.address }}</td>
+          <td>{{ company.contact }}</td>
+          <td>{{ company.email }}</td>
+          <td class="text-center">
+              <a routerLink="company-details/{{ company.id }}" routerLinkActive="active" >
+                <i class="fa fa-search"></i>
+              </a>
+              <a routerLink="company-edit/{{ company.id }}" routerLinkActive="active" >
+                <i class="fa fa-edit"></i>
+              </a>
+              <a routerLink="company-details/{{ company.id }}" routerLinkActive="active" >
+                <i class="fa fa-trash"></i>
+              </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
